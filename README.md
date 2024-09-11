@@ -11,6 +11,11 @@
 - Firebase setup
 - Deployinig our app to production
 - Create signup user account
+- Implement Signin user
+- Created our redux store wit huser slice
+- Implemented Sign Out
+- Update profile
+- Fetch from TMDB Movies
 
 # Features
 - Login/Signup page
