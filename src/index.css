@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.slick-prev, .slick-next { width: 150px !important;}
+.slick-prev:before, .slick-next:before {font-size: 40px !important;}
+.slick-prev { z-index: 99; left: -50px !important;}
+.blue h3{ margin: 0; background: black !important; }
+.content { padding: 0; width: auto !important; }
