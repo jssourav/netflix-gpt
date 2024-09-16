@@ -7,14 +7,16 @@ const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const getNowPlayingMovies = async () => {
+      const data = await fetch(
+        TMDB_BASE_URL + "now_playing?page=1",
+        API_OPTIONS
+      );
+      const json = await data.json();
+      dispatch(addNowPlayingMovies(json.results));
+    };
     getNowPlayingMovies();
-  }, []);
-
-  const getNowPlayingMovies = async () => {
-    const data = await fetch(TMDB_BASE_URL + "now_playing?page=1", API_OPTIONS);
-    const json = await data.json();
-    dispatch(addNowPlayingMovies(json.results));
-  };
+  }, [dispatch]);
 };
 
 export default useNowPlayingMovies;

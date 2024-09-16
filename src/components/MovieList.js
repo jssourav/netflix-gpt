@@ -39,9 +39,12 @@ const MovieList = ({ title, movies }) => {
     <div className="px-6 pt-6 text-white">
       <h1 className="text-3xl py-2">{title}</h1>
       <Slider {...settings}>
-        {movies?.map((movie) => (
-          <MovieCard key={movie.id} posterPath={movie.poster_path} />
-        ))}
+        {movies?.map(
+          (movie) =>
+            movie.poster_path && (
+              <MovieCard key={movie.id} posterPath={movie.poster_path} />
+            )
+        )}
       </Slider>
     </div>
   );
