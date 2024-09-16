@@ -23,7 +23,7 @@ const SecondarySontainer = () => {
   return (
     movies && (
       <div className="bg-black">
-        <div className="relative -mt-64 z-10 pl-12">
+        <div className="relative mt-0 md:-mt-64 z-10 pl-12">
           <MovieList
             title={lang[langkey].nowPlaying}
             movies={movies?.nowPlayingMovies}

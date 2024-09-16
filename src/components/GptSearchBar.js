@@ -24,8 +24,8 @@ const GptSearchBar = () => {
     console.log(searchText.current.value);
 
     const gptQuery = `Act as a movie recommendation system and suggest some movies for the query: "${searchText.current.value}". 
-Only give me the names of uptp 10 movies, comma-separated like the example result given ahead. 
-Example Result: Gadar, Shole, Don, Golmaal, Koi Mil Gaya`;
+Only give me the names of 7 movies, comma-separated like the example result given format only. 
+Example Result: Gadar, Shole, Don, Golmaal, Koi Mil Gaya, Jab We Met, Veer-Zaara`;
     // Make an API call to GPT API and get movie results
     const gptResults = await openai.chat.completions.create({
       messages: [{ role: "user", content: gptQuery }],
@@ -50,9 +50,9 @@ Example Result: Gadar, Shole, Don, Golmaal, Koi Mil Gaya`;
   };
 
   return (
-    <div className="pt-[10%] flex justify-center">
+    <div className="pt-[40%] md:pt-[10%] flex justify-center">
       <form
-        className="bg-black w-1/2 grid grid-cols-12"
+        className="bg-black w-full md:w-1/2 grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input

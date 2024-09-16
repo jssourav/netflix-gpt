@@ -76,49 +76,56 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img src={BG_IMAGE} alt="background" />
+      <div className="fixed -z-10 ">
+        <img
+          className="h-screen object-cover md:h-max"
+          src={BG_IMAGE}
+          alt="background"
+        />
       </div>
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="absolute p-12 bg-black w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
-      >
-        <h1 className="font-bold text-3xl py-4">
-          {isSignInFOrm ? "Sign In" : "Sign Up"}
-        </h1>
-        {!isSignInFOrm && (
+      <div className="absolute p-12 bg-black w-5/6 md:w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+        <form onSubmit={(e) => e.preventDefault()} className="">
+          <h1 className="font-bold text-3xl py-4">
+            {isSignInFOrm ? "Sign In" : "Sign Up"}
+          </h1>
+          {!isSignInFOrm && (
+            <input
+              ref={name}
+              type="text"
+              placeholder="Full Name"
+              className="p-4 my-4 w-full bg-inherit border border-white rounded-md"
+            />
+          )}
           <input
-            ref={name}
+            ref={email}
             type="text"
-            placeholder="Full Name"
+            placeholder="Email Address"
             className="p-4 my-4 w-full bg-inherit border border-white rounded-md"
           />
-        )}
-        <input
-          ref={email}
-          type="text"
-          placeholder="Email Address"
-          className="p-4 my-4 w-full bg-inherit border border-white rounded-md"
-        />
-        <input
-          ref={password}
-          type="password"
-          placeholder="Passwprd"
-          className="p-4 my-4 w-full bg-inherit border border-white rounded-md"
-        />
-        <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
-        <button
-          className="p-4 my-6 bg-red-700 w-full rounded-lg"
-          onClick={handelButtonClick}
-        >
-          {isSignInFOrm ? "Sign In" : "Sign Up"}
-        </button>
-        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
-          {isSignInFOrm
-            ? "New to NetflixGPT? Sign up now."
-            : "Already registared? Sign In"}
-        </p>
-      </form>
+          <input
+            ref={password}
+            type="password"
+            placeholder="Passwprd"
+            className="p-4 my-4 w-full bg-inherit border border-white rounded-md"
+          />
+          {errorMessage && (
+            <p className="text-red-500 font-bold text-lg py-2">
+              {errorMessage}
+            </p>
+          )}
+          <button
+            className="p-4 my-6 bg-red-700 w-full rounded-lg"
+            onClick={handelButtonClick}
+          >
+            {isSignInFOrm ? "Sign In" : "Sign Up"}
+          </button>
+          <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
+            {isSignInFOrm
+              ? "New to NetflixGPT? Sign up now."
+              : "Already registared? Sign In"}
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
