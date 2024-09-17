@@ -8,8 +8,8 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
-import { addUser } from "../utils/userSlice";
 import { BG_IMAGE } from "../utils/constants";
+import { addUser } from "../utils/store/userSlice";
 
 const Login = () => {
   const [isSignInFOrm, setIsSignInForm] = useState(true);

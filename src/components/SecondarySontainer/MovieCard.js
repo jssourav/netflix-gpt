@@ -1,5 +1,5 @@
 import React from "react";
-import { POSTER_CDN_URL } from "../utils/constants";
+import { POSTER_CDN_URL } from "../../utils/constants";
 
 const MovieCard = ({ posterPath }) => {
   return (

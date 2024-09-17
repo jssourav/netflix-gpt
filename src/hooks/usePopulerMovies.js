@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS, TMDB_BASE_URL } from "../utils/constants";
-import { addPopulerMovies } from "../utils/moviesSlice";
+import { addPopulerMovies } from "../utils/store/moviesSlice";
 
 const usePopulerMovies = () => {
   const dispatch = useDispatch();
